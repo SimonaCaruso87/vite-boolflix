@@ -6,4 +6,5 @@ export const store = reactive({
     // es searrchText , searchStatus , charachters , loading  
     theMovieArray: [],
     titleArray: '',
+    selectFilm:[]
 });

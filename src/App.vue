@@ -41,8 +41,7 @@ export default{
 
 <template>
 <!-- il bottone che deve far partire una funzione sta in header , mentre la funzione sta in app , non avendo la funzione creiamo un evento customs da app dentro header e scatiamo la funzione in questo caso reserchMovie -->
-<HeaderComponent @reserchTitle="reserchMovie()"/>
-{{ store.theMovieArray }}
+<HeaderComponent @reserchTitle= "reserchMovie()"/>
 
 <MainComponent />
 
