@@ -3,14 +3,14 @@
 @import "bootstrap/scss/bootstrap";
 
 
-main {
-    color: $main-color
-}
+// main {
+//     color: $main-color
+// }
 
-p {
-    @include main-coloring;
-}
+// p {
+//     @include main-coloring;
+// }
 
-ul {
-    border: 1px solid $main-color;
-}
+// ul {
+//     border: 1px solid $main-color;
+// }
