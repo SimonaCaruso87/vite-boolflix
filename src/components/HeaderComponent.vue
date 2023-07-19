@@ -1,9 +1,13 @@
 <script>
+// importiamo lo store per creare ciclo array per riempire l'input
+import { store } from '../store.js';
+
 export default{
     name: "HeaderComponent",
     data(){
         return{
-
+            // cosi' ci ritorna lo store
+          store
         }
     },
     methods:{
@@ -24,7 +28,7 @@ export default{
                     <div class="collapse navbar-collapse d-flex justify-content-between " id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="#">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Link</a>
@@ -40,13 +44,22 @@ export default{
                                 <a class="dropdown-item" href="#">Something else here</a>
                                 </div>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link disabled" href="#">Disabled</a>
-                            </li>
                         </ul>
+                        <!-- per creare un filtro inserire un v-model nella select + inserire @click e dentro evento da intercettare-->
                         <form class="form-inline my-2 my-lg-0 d-flex">
-                            <input class="form-control mr-sm-2 m-3" type="search" placeholder="Search Film or Series..." aria-label="Search">
-                            <button class="btn btn-outline-warning my-2 my-sm-0 m-4" type="submit">Search</button>
+                            <input  
+                            v-model="store.titleArray" 
+                            class="form-control my-sm-0 mr-sm-2" 
+                            type="search" 
+                            placeholder="Search Film or Series..." 
+                            aria-label="Search">
+                                <!-- dentro @click=$emit inseriamo un evento customs  -->
+                                <button 
+                                @click="$emit('reserchTitle')"  
+                                class="btn btn-outline-warning my-sm-0 m-4" 
+                                type="submit">
+                                Search
+                                </button>
                         </form>
                     </div>
             </nav>
