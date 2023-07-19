@@ -1,5 +1,7 @@
 @use "partials/variables" as*;
 @use "partials/mixins" as *;
+@import "bootstrap/scss/bootstrap";
+
 
 main {
     color: $main-color

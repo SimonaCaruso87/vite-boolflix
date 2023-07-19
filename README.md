@@ -5,3 +5,9 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 ## Recommended IDE Setup
 
 - [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+
+Esercizio di oggi: Boolflix
+nome repo: vite-boolflix
+Descrizione:
+Seguite il brief in allegato per svolgere l'esercizio
+Buon lavoro e buon divertimento a tutti! :grande_sorriso:
