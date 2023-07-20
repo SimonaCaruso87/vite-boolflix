@@ -45,7 +45,7 @@ export default{
 
 <template>
 
-<HeaderComponent @performanceSearch="search()"/>
+<HeaderComponent @performanceSearch="search"/>
 
 <MainComponent />
 
