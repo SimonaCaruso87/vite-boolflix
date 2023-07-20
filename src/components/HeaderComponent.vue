@@ -6,19 +6,33 @@ export default{
     name: "HeaderComponent",
     data(){
         return{
-            // cosi' ci ritorna lo store
-          store
-        }
+             store
+        };
     },
     methods:{
+    //    search(){
+    //     console.log(this.searchText);
 
-    }
-}
+    //     axios.get('https://api.themoviedb.org/3/search/movie', {
+    //             params: {
+    //                 api_key: 'a7327a260401072f9a6c5602bb9091a4',
+    //                 query: this.searchText   
+    //             }
+    //         })
+    //         .then(response => {
+    //             console.log(response);
+    //         });
+    //    },
+
+
+
+    },
+};
 </script>
 
 <template>
 
-    <header>
+<header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a class="navbar-brand text-warning ps-3" href="#">BOOLFIX</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,20 +59,19 @@ export default{
                                 </div>
                             </li>
                         </ul>
-                        <!-- per creare un filtro inserire un v-model nella select + inserire @click e dentro evento da intercettare-->
                         <form class="form-inline my-2 my-lg-0 d-flex">
-                            <input  
-                            v-model="store.titleArray" 
-                            class="form-control my-sm-0 mr-sm-2" 
-                            type="search" 
-                            placeholder="Search Film or Series..." 
-                            aria-label="Search">
-                                <!-- dentro @click=$emit inseriamo un evento customs  -->
+                            <!-- Per intercettare quello che l'utente scrive in un input usiamo v-model -->
+                            <input 
+                            class="mr-sm-2" 
+                            type="text" 
+                            placeholder="Cerca" 
+                            aria-label="Search"
+                            v-model="store.searchText">
                                 <button 
-                                @click="$emit('reserchTitle')"  
-                                class="btn btn-outline-warning my-sm-0 m-4" 
-                                type="submit">
-                                Search
+                                @click="$emit('performanceSearch')"
+                                class="btn btn-outline-warning my-2 my-sm-0 m-4 text-warning"
+                                type="text">
+                                Cerca
                                 </button>
                         </form>
                     </div>
@@ -69,8 +82,6 @@ export default{
 
 <style lang="scss" scoped>
 
-header{
-    
-}
+
 
 </style>

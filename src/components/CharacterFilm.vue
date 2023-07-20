@@ -1,6 +1,6 @@
 <script>
 
-import { store } from '../store.js';
+// import { store } from '../store.js';
 
 export default{
     name: "CharacterFilm",
@@ -12,9 +12,12 @@ export default{
     methods:{
 
     },
-    props:{
+    props: {
     // possiamo passare Object String Number Booleano Array
-       singleComponent : Object
+       singleComponent : {
+        type: Object ,
+        default:null
+       }
     }
 }
 </script>

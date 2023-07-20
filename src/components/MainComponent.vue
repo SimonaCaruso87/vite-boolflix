@@ -6,9 +6,9 @@ import { store } from '../store.js';
 
 export default{
     name: "MainComponent",
-    components:{
-      CharacterFilm
-    },
+    // components:{
+    //   CharacterFilm
+    // },
     data(){
         return{
            store
@@ -16,37 +16,37 @@ export default{
     },
     methods:{
 
-    }
+    },
+    // props:{
+    //     singleFilm : Object
+    // }
 }
 </script>
 
 <template>
+<main>
+    <ul>
+        <li 
+        v-for="(movie , i) in store.movies" 
+        :key="i">
+             <ol>
+                <li>
+                    {{ movie.title }}
+                </li>
+                <li>
+                    {{ movie.original_title }}
+                </li>
+                <li>
+                    {{ movie.original_language }}
+                </li>
+                <li>
+                    {{ movie.vote_average }}
+                </li>
+             </ol>
+        </li>
+    </ul>
+</main>
 
-    <main class="bg-dark" >
-        <select v-model="store.selectFilm" @change="$emit('selectFilm')" class="select-card border-1 rounded-1" name="card" id="card">
-            <!-- fare un v-bind prima di value affinchè sottometta il form -->
-            <option :value="singleFilm.archetype_name" v-for="(singleFilm , index) in store.titleArray" :key="index">
-                {{singleFilm.archetype_name}}
-            </option>
-        </select>
-        <section class="bg-dark">
-            <div class="container-film">
-
-                <div class="section-top">
-                <h6>
-                    ORIGINALI NETFLIX
-                </h6>
-                </div>
-                <div class="film">
-                    <CharacterFilm
-                    v-for="(singleFilm, index) in store.theMovieArray " 
-                    :key="index" 
-                    :singleComponent='singleFilm'
-                    />
-                </div>
-            </div>
-        </section>    
-    </main>
 
 </template>
 
