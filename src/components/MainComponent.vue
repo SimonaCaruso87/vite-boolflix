@@ -56,24 +56,5 @@ main{
      padding: 40px 80px;
 
 }
-section{
-    .container-film{
-        margin:0 auto;
-        background-color: white;
-        padding:30px;
-        .section-top{
-        background-color:#212529;
-        height:60px;
-        h6{
-            color:white;
-            padding:20px;
-        }
-        }
-         .film{
-            display: flex;
-            flex-wrap: wrap;
-        }
-    }
-}
 
 </style>

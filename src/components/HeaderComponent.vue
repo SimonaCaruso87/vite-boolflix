@@ -10,19 +10,6 @@ export default{
         };
     },
     methods:{
-    //    search(){
-    //     console.log(this.searchText);
-
-    //     axios.get('https://api.themoviedb.org/3/search/movie', {
-    //             params: {
-    //                 api_key: 'a7327a260401072f9a6c5602bb9091a4',
-    //                 query: this.searchText   
-    //             }
-    //         })
-    //         .then(response => {
-    //             console.log(response);
-    //         });
-    //    },
 
 
 
