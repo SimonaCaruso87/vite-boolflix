@@ -21,7 +21,9 @@ export default{
 
 <header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand text-warning ps-3" href="#">BOOLFIX</a>
+                <a class="navbar-brand text-warning ps-3" href="#">
+                    <img src="../assets/img/logo.jpg" alt="Netflix">
+                </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                          <span class="navbar-toggler-icon"></span>
                     </button>
@@ -49,7 +51,7 @@ export default{
                         <form class="form-inline my-2 my-lg-0 d-flex">
                             <!-- Per intercettare quello che l'utente scrive in un input usiamo v-model -->
                             <input 
-                            class="mr-sm-2" 
+                            class="form-control mr-sm-2" 
                             type="text" 
                             placeholder="Cerca" 
                             aria-label="Search"
@@ -69,6 +71,11 @@ export default{
 
 <style lang="scss" scoped>
 
+header{
 
+    img{
+        width: 100px;
+    }
+}
 
 </style>

@@ -16,10 +16,14 @@ export default{
     },
     methods:{
 
+        getFlag(lang) {
+            const flags = {
+
+            }
+        }
+
     },
-    // props:{
-    //     singleFilm : Object
-    // }
+    
 }
 </script>
 
@@ -37,7 +41,7 @@ export default{
                     {{ movie.original_title }}
                 </li>
                 <li>
-                    {{ movie.original_language }}
+                    <img src="https://flagsapi.com/:IT/:style/:40px.png">                    {{ movie.original_language }}
                 </li>
                 <li>
                     {{ movie.vote_average }}
@@ -53,7 +57,13 @@ export default{
 <style lang="scss" scoped>
 
 main{
-     padding: 40px 80px;
+     
+    background-image: url(../assets/img/sfondo-new.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+    height:900px;
+        
+      
 
 }
 
