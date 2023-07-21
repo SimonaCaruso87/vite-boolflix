@@ -10,7 +10,10 @@ export default{
         };
     },
     methods:{
-
+     prevent(e){
+         e.preventDefault();
+        }
+   
 
 
     },
@@ -19,53 +22,53 @@ export default{
 
 <template>
 
-<header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand text-warning ps-3" href="#">
-                    <img src="../assets/img/logo.jpg" alt="Netflix">
-                </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                         <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse d-flex justify-content-between " id="navbarSupportedContent">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Serie Tv</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Film
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Azione</a>
-                                <a class="dropdown-item" href="#">Romantici</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Thriller</a>
-                                </div>
-                            </li>
-                        </ul>
-                        <form class="form-inline my-2 my-lg-0 d-flex">
-                            <!-- Per intercettare quello che l'utente scrive in un input usiamo v-model -->
-                            <input 
-                            class="form-control mr-sm-2" 
-                            type="text" 
-                            placeholder="Cerca" 
-                            aria-label="Search"
-                            v-model="store.searchText">
-                                <button 
-                                @click="$emit('performanceSearch')"
-                                class="btn btn-outline-warning my-2 my-sm-0 m-4 text-warning"
-                                type="text">
-                                Cerca
-                                </button>
-                        </form>
-                    </div>
-            </nav>
-    </header>
+    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+        <img style="width: 100px;" src="../assets/img/logo.jpg" alt="Netflix">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Serie Tv</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form 
+      @submit.prevent="event" 
+      class="d-flex" 
+      role="search">
+        <input 
+        @change="$emit('performanceSearch')"
+        v-model="store.searchText"
+        class="form-control me-2" 
+        type="input" 
+        placeholder="Cerca..." 
+        aria-label="Search">
+        <button 
+        @click="$emit('performanceSearch')"
+        class="btn btn-outline-warning" 
+        type="button">Cerca</button>
+      </form>
+    </div>
+  </div>
+</nav>
 
 </template>
 

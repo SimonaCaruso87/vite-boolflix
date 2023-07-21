@@ -15,11 +15,25 @@ export default{
         }
     },
     methods:{
-
         getFlag(lang) {
-            const flags = {
-
-            }
+           if (lang == 'it') {
+            return 'https://flagsapi.com/IT/flat/64.png';
+           }
+           else if (lang == 'en') {
+             return 'https://flagsapi.com/GB/flat/64.png';
+           }
+           else if (lang == 'jp') {
+             return 'https://flagsapi.com/JP/flat/64.png';
+           }
+           else if (lang == 'fr') {
+             return 'https://flagsapi.com/FR/flat/64.png';
+           }
+           else{
+             return 'https://flagsapi.com/JP/flat/64.png';
+           }
+        //    else{
+        //     return '' ;
+        //    }
         }
 
     },
@@ -41,7 +55,7 @@ export default{
                     {{ movie.original_title }}
                 </li>
                 <li>
-                    <img src="https://flagsapi.com/:IT/:style/:40px.png">                    {{ movie.original_language }}
+                    <img :src="getFlag(movie.original_language)" alt="">                    
                 </li>
                 <li>
                     {{ movie.vote_average }}
