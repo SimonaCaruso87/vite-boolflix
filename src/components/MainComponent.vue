@@ -25,26 +25,18 @@ export default{
 </script>
 
 <template>
-<main>
-    <div class="container">
-        <h2>
-        MOVIES
-        </h2>
-        <div v-for="(movie , i) in store.movies" 
+    <main>
+        <div class="container">
+            <div v-for="(movie , i) in store.movies" 
+                :key="i">
+                <SingleElement :elementData="movie"/>
+            </div>
+            <div v-for="(singleSeries , i) in store.series" 
             :key="i">
-            <SingleElement :elementData="movie"/>
+            <SingleElement :elementData="singleSeries"/>
+            </div>
         </div>
-        <h2>
-            SERIES
-        </h2>
-        <div v-for="(singleSeries , i) in store.series" 
-        :key="i">
-        <SingleElement :elementData="singleSeries"/>
-        </div>
-    </div>
-</main>
-
-
+    </main>
 </template>
 
 <style lang="scss" scoped>

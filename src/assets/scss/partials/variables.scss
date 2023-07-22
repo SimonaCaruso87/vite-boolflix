@@ -4,6 +4,12 @@
 -------------------------
 */         
 
-// $main-color: lightcoral;
-// $secondary-color: blue;
-// $debug-color: 2px solid yellow;
+$main-font: "Lato", sans-serif;
+
+$primary-color: rgb(20, 20, 20);
+
+$light-primary-color: lighten($primary-color, 40%);
+
+$dark-color: rgb(6, 6, 6);
+
+$light-color: #ffffff;

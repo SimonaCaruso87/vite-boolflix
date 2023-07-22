@@ -35,6 +35,9 @@ export default{
            }
         
         },
+     vote(){
+        return Math.ceil(this.elementData.vote_average / 2);
+     }
 
     }
 };
@@ -42,31 +45,31 @@ export default{
 </script>
 
 <template>
-     <div class="row">
-        <div class="col-12">
-       <div class="image-wrapper">
-            <img :src="`https://image.tmdb.org/t/p/w342${elementData.poster_path}`" alt="elementData.name">
-       </div>
-            <div class="info-card">
-                <h6>
-                <!-- {{ typeof elementData.title != undefined ? elementData.title : elementData.name }} -->
-                {{ elementData.title ?? elementData.name }}
-                </h6>
-                <h6>
-                {{ elementData.original_title ?? elementData.original_name }}
-                </h6>
-                <div>
-                    <img :src="flag" alt="">                    
+        <div class="col">
+            <div class="card">
+                <div class="image-wrapper">
+                        <img :src="`https://image.tmdb.org/t/p/w342${elementData.poster_path}`" alt="elementData.name">
                 </div>
-                <div>
-                    {{ Math.ceil(elementData.vote_average / 2) }}
-                </div>
+                    <div class="info-card">
+                        <h6>
+                        {{ elementData.title ?? elementData.name }}
+                        </h6>
+                        <h6>
+                        {{ elementData.original_title ?? elementData.original_name }}
+                        </h6>
+                        <div>
+                            <img :src="flag" alt="">                    
+                        </div>
+                        <span v-for="numero in vote" :key="numero">
+                            ★
+                        </span>
+                        <span v-for="numero in (5- vote)" :key="numero">
+                            ☆
+                        </span>     
+                    </div>
             </div>
-            
-    </div>
-     </div>
-    
-
+        </div>   
+        
 
 </template>
 
@@ -80,7 +83,7 @@ div{
             width:calc(100% / 3);
             margin: 5px;
             .info-card{
-                background-color: #D48F38;
+                background-color: black;
             }
 
             .image-wrapper{
