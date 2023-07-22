@@ -22,7 +22,7 @@ export default{
 
 <template>
 
-    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg bg-black border-bottom border-bottom-dark" data-bs-theme="dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
         <img style="width: 100px;" src="../assets/img/logo.jpg" alt="Netflix">

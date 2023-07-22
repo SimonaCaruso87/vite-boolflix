@@ -42,45 +42,31 @@ export default{
 </script>
 
 <template>
-
-    <div>
-        <ol>
-            <li>
-                <img :src="` https://image.tmdb.org/t/p/w342${elementData.poster_path}`" alt="">
-            </li>
-            <li>
+     <div class="row">
+        <div class="col-12">
+       <div class="image-wrapper">
+            <img :src="`https://image.tmdb.org/t/p/w342${elementData.poster_path}`" alt="elementData.name">
+       </div>
+            <div class="info-card">
+                <h6>
                 <!-- {{ typeof elementData.title != undefined ? elementData.title : elementData.name }} -->
                 {{ elementData.title ?? elementData.name }}
-            </li>
-            <li>
+                </h6>
+                <h6>
                 {{ elementData.original_title ?? elementData.original_name }}
-            </li>
-            <li>
-                <img :src="flag" alt="">                    
-            </li>
-            <li>
-                {{ elementData.vote_average }}
-            </li>
-            <li>
-                
-            </li>
-            <hr>
-        </ol>
+                </h6>
+                <div>
+                    <img :src="flag" alt="">                    
+                </div>
+                <div>
+                    {{ Math.ceil(elementData.vote_average / 2) }}
+                </div>
+            </div>
+            
     </div>
+     </div>
+    
 
-    <!-- <div class="card">
-        <div class="image-wrapper">
-            <img :src="singleComponent.results[0].title" :alt="singleComponent.original_title">
-        </div>
-        <div class="info-card">
-        <h5>
-            {{ SingleElement.title }}
-        </h5>
-        <h6>
-            {{ SingleElement.original_title }}
-        </h6>
-        </div>
-    </div> -->
 
 </template>
 
@@ -90,23 +76,22 @@ div{
     color:white;
 }
 
-        // .card{
-        //     width:calc((100% - 50px) / 5);
-        //     margin: 5px;
-        //     .info-card{
-        //         height: 100px;
-        //         background-color: #D48F38;
-        //     }
+        .card{
+            width:calc(100% / 3);
+            margin: 5px;
+            .info-card{
+                background-color: #D48F38;
+            }
 
-        //     .image-wrapper{
-        //             width:100%;
+            .image-wrapper{
+                    width:100%;
 
-        //             img{
-        //                 width: 100%;
-        //                 height:100%;
-        //                 object-fit: cover;
-        //             }
-        //         }
-        //  }
+                    img{
+                        width: 100%;
+                        height:100%;
+                        object-fit: cover;
+                    }
+                }
+         }
 
 </style>
