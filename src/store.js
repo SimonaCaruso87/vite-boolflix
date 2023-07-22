@@ -5,6 +5,7 @@ export const store = reactive({
     // in questo caso specifico creiamo un array vuoto
     // es searrchText , searchStatus , charachters , loading  
     searchText: "" ,
-    movies:[]
+    movies:[] ,
+    series: [] 
 });
 

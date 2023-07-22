@@ -1,66 +1,53 @@
 <script>
 
-import CharacterFilm from './CharacterFilm.vue';
 import { store } from '../store.js';
+import SingleElement from './SingleElement.vue';
+
 
 
 export default{
     name: "MainComponent",
-    // components:{
-    //   CharacterFilm
-    // },
+    components:{
+      SingleElement
+    },
     data(){
         return{
            store
         }
     },
     methods:{
-        getFlag(lang) {
-           if (lang == 'it') {
-            return 'https://flagsapi.com/IT/flat/64.png';
-           }
-           else if (lang == 'en') {
-             return 'https://flagsapi.com/GB/flat/64.png';
-           }
-           else if (lang == 'jp') {
-             return 'https://flagsapi.com/JP/flat/64.png';
-           }
-           else if (lang == 'fr') {
-             return 'https://flagsapi.com/FR/flat/64.png';
-           }
-           else{
-             return 'https://flagsapi.com/JP/flat/64.png';
-           }
-        //    else{
-        //     return '' ;
-        //    }
-        }
+
+    
 
     },
-    
 }
+
 </script>
 
 <template>
 <main>
+    <h2>
+        MOVIES
+    </h2>
     <ul>
         <li 
         v-for="(movie , i) in store.movies" 
         :key="i">
-             <ol>
-                <li>
-                    {{ movie.title }}
-                </li>
-                <li>
-                    {{ movie.original_title }}
-                </li>
-                <li>
-                    <img :src="getFlag(movie.original_language)" alt="">                    
-                </li>
-                <li>
-                    {{ movie.vote_average }}
-                </li>
-             </ol>
+        <SingleElement :elementData="movie"/>
+            
+        </li>
+    </ul>
+
+    <hr>
+
+    <h2>
+        SERIES
+    </h2>
+    <ul>
+        <li 
+        v-for="(singleSeries , i) in store.series" 
+        :key="i">
+        <SingleElement :elementData="singleSeries"/>
         </li>
     </ul>
 </main>
@@ -77,8 +64,6 @@ main{
     background-size: cover;
     height:900px;
         
-      
-
 }
 
 </style>
