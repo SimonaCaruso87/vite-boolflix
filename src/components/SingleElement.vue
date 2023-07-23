@@ -45,32 +45,28 @@ export default{
 </script>
 
 <template>
-        <div class="col">
-            <div class="card">
-                <div class="image-wrapper">
-                        <img :src="`https://image.tmdb.org/t/p/w342${elementData.poster_path}`" alt="elementData.name">
-                </div>
-                    <div class="info-card">
-                        <h6>
-                        {{ elementData.title ?? elementData.name }}
-                        </h6>
-                        <h6>
-                        {{ elementData.original_title ?? elementData.original_name }}
-                        </h6>
-                        <div>
-                            <img :src="flag" alt="">                    
-                        </div>
-                        <span v-for="numero in vote" :key="numero">
-                            ★
-                        </span>
-                        <span v-for="numero in (5- vote)" :key="numero">
-                            ☆
-                        </span>     
-                    </div>
+    <div class="card">
+            <div>
+                <img :src="`https://image.tmdb.org/t/p/w342${elementData.poster_path}`" class="image-wrapper" alt="elementData.name">
             </div>
-        </div>   
-        
-
+            <div class="info-card">
+                <h6>
+                {{ elementData.title ?? elementData.name }}
+                </h6>
+                <h6>
+                {{ elementData.original_title ?? elementData.original_name }}
+                </h6>
+                <div>
+                    <img :src="flag" alt="">                    
+                </div>
+                <span v-for="numero in vote" :key="numero">
+                    <font-awesome-icon icon="fa-solid fa-star" />
+                </span>
+                <span v-for="numero in (5- vote)" :key="numero">
+                    <font-awesome-icon icon="fa-regular fa-star" />
+                </span>     
+            </div>
+    </div>
 </template>
 
 <style lang="scss" scoped>
@@ -80,14 +76,16 @@ div{
 }
 
         .card{
-            width:calc(100% / 3);
-            margin: 5px;
-            .info-card{
-                background-color: black;
-            }
+            width:calc(400px - 40px);
+            margin: 20px;
 
             .image-wrapper{
                     width:100%;
+            }
+            .info-card{
+                background-color: black;
+                height: calc(100% - 360px);
+            }
 
                     img{
                         width: 100%;

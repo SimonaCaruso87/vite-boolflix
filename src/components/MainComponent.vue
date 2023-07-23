@@ -26,7 +26,7 @@ export default{
 
 <template>
     <main>
-        <div class="container">
+        <div class="container d-flex flex-wrap">
             <div v-for="(movie , i) in store.movies" 
                 :key="i">
                 <SingleElement :elementData="movie"/>
